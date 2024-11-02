@@ -19,10 +19,22 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.20'
+        go-version: '1.22.5'
 
-    - name: Build
-      run: go build -v ./cmd/app/
+    - name: Cache Go modules
+      uses: actions/cache@v4
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
 
-    - name: Test
+    - name: Install dependencies
+      run: go mod download
+
+    - name: Run tests
       run: go test -v ./...
+
+    # Сборка приложения
+    - name: Build application
+      run: go build -o PUNK_Network ./cmd/app
