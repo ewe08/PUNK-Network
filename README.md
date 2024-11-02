@@ -32,6 +32,16 @@ my-web-app/
 │   └── docker-compose.yaml         # Docker Compose для локальной разработки
 ├── migrations/
 │   └── ...                         # SQL файлы миграций для базы данных
+├── static/
+│   ├── css/
+│   │   └── bootstrap.min.css
+│   ├── js/
+│   │   └── bootstrap.bundle.min.js
+│   └── images/
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   └── about.html
 ├── Dockerfile                      # Dockerfile для создания образа приложения
 ├── Makefile                        # Makefile для удобных команд сборки и запуска
 ├── README.md                       # Документация
