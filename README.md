@@ -116,6 +116,7 @@ DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=password
 DB_NAME=mydatabase
+ROOT_CERT_PATH=/home/<домашняя директория>/.mysql/root.crt
 
 REDIS_HOST=localhost
 REDIS_PORT=6379
